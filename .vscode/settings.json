@@ -1,0 +1,10 @@
+{
+    "json.schemas": [
+        {
+            "url": ".vscode/.resources/schemas/profileItemList.schema.json",
+            "fileMatch": [
+                ".vscode/.resources/profiles.json"
+            ]
+        }
+    ]
+}

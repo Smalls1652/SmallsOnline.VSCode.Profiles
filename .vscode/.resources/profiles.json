@@ -1,0 +1,12 @@
+[
+    {
+        "displayName": "Default",
+        "description": "The default VSCode profile.",
+        "filePath": "profiles/Default.code-profile"
+    },
+    {
+        "displayName": ".NET",
+        "description": "Profile for .NET and C# development.",
+        "filePath": "profiles/dotnet.code-profile"
+    }
+]

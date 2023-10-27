@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "profileItem.schema.json",
+    "title": "VSCode Profile Item",
+    "description": "Data referring to an exported VSCode profile.",
+    "type": "object",
+    "properties": {
+        "displayName": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "filePath": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "displayName",
+        "filePath"
+    ]
+}
