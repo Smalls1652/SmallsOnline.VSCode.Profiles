@@ -4,11 +4,14 @@ This repo contains all of the [profiles I use with VSCode](https://code.visualst
 
 ## Profiles
 
+- [Default](#default)
+- [.NET](#net)
+
 ### Default
 
 `./profiles/Default.code-profile`
 
-The default profile.
+The default VSCode profile.
 
 #### Extensions
 
@@ -96,12 +99,11 @@ The default profile.
 | XML Tools | `dotjoshjohnson.xml` |
 | YAML | `redhat.vscode-yaml` |
 
-
 ### .NET
 
 `./profiles/dotnet.code-profile`
 
-Profile for .NET/C# development.
+Profile for .NET and C# development.
 
 #### Extensions
 
