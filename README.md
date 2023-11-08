@@ -6,7 +6,7 @@ This repo contains all of the [profiles I use with VSCode](https://code.visualst
 
 - [Default](#default)
 - [.NET](#net)
-- [Infrastructure as Code](#infrastructure as code)
+- [Infrastructure as Code](#infrastructure-as-code)
 
 ### Default
 
@@ -18,9 +18,10 @@ The default VSCode profile.
 
 | Display Name | Extension ID |
 | --- | --- |
-| .NET Runtime Install Tool | `ms-dotnettools.vscode-dotnet-runtime` |
+| .NET Install Tool | `ms-dotnettools.vscode-dotnet-runtime` |
 | ASP.NET Core Switcher | `adrianwilczynski.asp-net-core-switcher` |
 | AutoHotkey Plus Plus | `mark-wiemer.vscode-autohotkey-plus-plus` |
+| Avalonia for VSCode | `avaloniateam.vscode-avalonia` |
 | Azure Account | `ms-vscode.azure-account` |
 | Azure App Service | `ms-azuretools.vscode-azureappservice` |
 | Azure CLI Tools | `ms-vscode.azurecli` |
@@ -91,6 +92,7 @@ The default VSCode profile.
 | Remote Explorer | `ms-vscode.remote-explorer` |
 | Remote Repositories | `ms-vscode.remote-repositories` |
 | Sort JSON objects | `richie5um2.vscode-sort-json` |
+| Teams Toolkit | `teamsdevapp.ms-teams-vscode-extension` |
 | Test Adapter Converter | `ms-vscode.test-adapter-converter` |
 | UserScript | `adpyke.vscode-userscript` |
 | vscode-icons | `vscode-icons-team.vscode-icons` |
@@ -110,13 +112,22 @@ Profile for .NET and C# development.
 
 | Display Name | Extension ID |
 | --- | --- |
-| .NET Runtime Install Tool | `ms-dotnettools.vscode-dotnet-runtime` |
+| .NET Install Tool | `ms-dotnettools.vscode-dotnet-runtime` |
 | C# | `ms-dotnettools.csharp` |
+| Command Variable | `rioj7.command-variable` |
+| Dev Containers | `ms-vscode-remote.remote-containers` |
 | Docker | `ms-azuretools.vscode-docker` |
+| Fluent Icons | `miguelsolorio.fluent-icons` |
+| Git History | `donjayamanne.githistory` |
 | GitHub Codespaces | `github.codespaces` |
 | GitHub Copilot | `github.copilot` |
 | GitHub Copilot Chat | `github.copilot-chat` |
+| markdownlint | `davidanson.vscode-markdownlint` |
 | PowerShell | `ms-vscode.powershell` |
+| Remote Development | `ms-vscode-remote.vscode-remote-extensionpack` |
+| vscode-icons | `vscode-icons-team.vscode-icons` |
+| XML | `redhat.vscode-xml` |
+| YAML | `redhat.vscode-yaml` |
 
 ### Infrastructure as Code
 
@@ -144,5 +155,6 @@ Profile for Infrastructure as Code config writing (Terraform, Azure Bicep, etc).
 | HashiCorp Terraform | `hashicorp.terraform` |
 | markdownlint | `davidanson.vscode-markdownlint` |
 | Remote Development | `ms-vscode-remote.vscode-remote-extensionpack` |
+| vscode-icons | `vscode-icons-team.vscode-icons` |
 | XML | `redhat.vscode-xml` |
 | YAML | `redhat.vscode-yaml` |
