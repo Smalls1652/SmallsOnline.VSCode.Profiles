@@ -8,5 +8,10 @@
         "displayName": ".NET",
         "description": "Profile for .NET and C# development.",
         "filePath": "profiles/dotnet.code-profile"
+    },
+    {
+        "displayName": "Infrastructure as Code",
+        "description": "Profile for Infrastructure as Code config writing (Terraform, Azure Bicep, etc).",
+        "filePath": "profiles/Infrastructure as Code.code-profile"
     }
 ]
