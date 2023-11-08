@@ -6,6 +6,7 @@ This repo contains all of the [profiles I use with VSCode](https://code.visualst
 
 - [Default](#default)
 - [.NET](#net)
+- [Infrastructure as Code](#infrastructure as code)
 
 ### Default
 
@@ -116,3 +117,32 @@ Profile for .NET and C# development.
 | GitHub Copilot | `github.copilot` |
 | GitHub Copilot Chat | `github.copilot-chat` |
 | PowerShell | `ms-vscode.powershell` |
+
+### Infrastructure as Code
+
+`./profiles/Infrastructure as Code.code-profile`
+
+Profile for Infrastructure as Code config writing (Terraform, Azure Bicep, etc).
+
+#### Extensions
+
+| Display Name | Extension ID |
+| --- | --- |
+| .NET Install Tool | `ms-dotnettools.vscode-dotnet-runtime` |
+| Azure Account | `ms-vscode.azure-account` |
+| Azure CLI Tools | `ms-vscode.azurecli` |
+| Azure Resource Manager (ARM) Tools | `msazurermtools.azurerm-vscode-tools` |
+| Azure Terraform | `ms-azuretools.vscode-azureterraform` |
+| Bicep | `ms-azuretools.vscode-bicep` |
+| Command Variable | `rioj7.command-variable` |
+| Dev Containers | `ms-vscode-remote.remote-containers` |
+| Docker | `ms-azuretools.vscode-docker` |
+| Fluent Icons | `miguelsolorio.fluent-icons` |
+| Git History | `donjayamanne.githistory` |
+| GitHub Copilot | `github.copilot` |
+| GitHub Copilot Chat | `github.copilot-chat` |
+| HashiCorp Terraform | `hashicorp.terraform` |
+| markdownlint | `davidanson.vscode-markdownlint` |
+| Remote Development | `ms-vscode-remote.vscode-remote-extensionpack` |
+| XML | `redhat.vscode-xml` |
+| YAML | `redhat.vscode-yaml` |
