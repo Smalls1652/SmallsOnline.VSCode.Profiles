@@ -38,6 +38,40 @@
                 "showReuseMessage": true,
                 "clear": true
             }
+        },
+        {
+            "label": "Backup VSCode profiles",
+            "detail": "Backup all non-default VSCode profiles.",
+            "icon": {
+                "id": "file-symlink-file",
+                "color": "terminal.ansiCyan"
+            },
+            "group": "build",
+            "type": "shell",
+            "command": "${workspaceFolder}/tools/Invoke-ProfileBackup.ps1",
+            "args": [
+                "-RootPath",
+                "\"${workspaceFolder}\"",
+                "-Verbose"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "pwsh",
+                    "args": [
+                        "-NoLogo",
+                        "-Command"
+                    ]
+                }
+            },
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
         }
     ]
 }
