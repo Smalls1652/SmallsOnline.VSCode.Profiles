@@ -17,6 +17,11 @@ if ([System.IO.FileAttributes]::Directory -notin (Get-Item -Path $rootPathResolv
     )
 }
 
+Write-Verbose "Getting all extensions applied to all profiles."
+$vscodeUserExtensionsPath = Join-Path -Path ([System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::UserProfile)) -ChildPath ".vscode/extensions/extensions.json"
+$vscodeUserExtensionsContent = Get-Content -Path $vscodeUserExtensionsPath -Raw | ConvertFrom-Json
+$allProfilesExtensions = $vscodeUserExtensionsContent | Where-Object { $PSItem.metadata.isApplicationScoped -eq $true }
+
 $vscodeUserPath = $null
 if ([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform([System.Runtime.InteropServices.OSPlatform]::OSX)) {
     $vscodeUserPath = Join-Path -Path ([System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::UserProfile)) -ChildPath "Library/Application Support/Code/User/"
@@ -41,22 +46,40 @@ foreach ($profileItem in $userDataProfiles) {
     $profileExtensionsPath = Join-Path -Path $profilesDirPath -ChildPath "$($profileItem.location)/extensions.json"
     $profileExtensionsContent = Get-Content -Path $profileExtensionsPath -Raw | ConvertFrom-Json
 
-    $profileExtensions = foreach ($extensionItem in $profileExtensionsContent) {
+    $profileExtensions = [System.Collections.Generic.List[pscustomobject]]::new()
+    foreach ($extensionItem in $allProfilesExtensions) {
         $extensionPackageJsonPath = Join-Path -Path $extensionItem.location.path -ChildPath "package.json"
         $extensionPackageJsonContent = Get-Content -Path $extensionPackageJsonPath -Raw | ConvertFrom-Json
 
-        [pscustomobject]@{
-            "identifier" = [pscustomobject]@{
-                "id" = $extensionItem.identifier.id;
-                "uuid" = $extensionItem.identifier.uuid;
-            };
-            "displayName" = $extensionPackageJsonContent.displayName;
-        }
+        $profileExtensions.Add(
+            [pscustomobject]@{
+                "identifier"  = [pscustomobject]@{
+                    "id"   = $extensionItem.identifier.id;
+                    "uuid" = $extensionItem.identifier.uuid;
+                };
+                "displayName" = $extensionPackageJsonContent.displayName;
+            }
+        )
+    }
+
+    foreach ($extensionItem in $profileExtensionsContent) {
+        $extensionPackageJsonPath = Join-Path -Path $extensionItem.location.path -ChildPath "package.json"
+        $extensionPackageJsonContent = Get-Content -Path $extensionPackageJsonPath -Raw | ConvertFrom-Json
+
+        $profileExtensions.Add(
+            [pscustomobject]@{
+                "identifier"  = [pscustomobject]@{
+                    "id"   = $extensionItem.identifier.id;
+                    "uuid" = $extensionItem.identifier.uuid;
+                };
+                "displayName" = $extensionPackageJsonContent.displayName;
+            }
+        )
     }
     
     $profileObj = [pscustomobject]@{
-        "name" = $profileItem.name;
-        "icon" = $profileItem.icon;
+        "name"       = $profileItem.name;
+        "icon"       = $profileItem.icon;
         "extensions" = ($profileExtensions | ConvertTo-Json -Compress);
     }
 
