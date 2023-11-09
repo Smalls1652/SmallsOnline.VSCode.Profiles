@@ -47,7 +47,7 @@ foreach ($profileItem in $userDataProfiles) {
         "extensions" = $profileExtensionsContent
     }
 
-    $profileOutPath = Join-Path -Path $rootPathResolved -ChildPath ".resources/$($profileObj.name).code-profile"
+    $profileOutPath = Join-Path -Path $rootPathResolved -ChildPath "profiles/$($profileObj.name).code-profile"
 
     Write-Verbose "Writing profile to '$($profileOutPath)'."
     $profileObj | ConvertTo-Json -Compress | Out-File -FilePath $profileOutPath -Encoding "UTF8"
