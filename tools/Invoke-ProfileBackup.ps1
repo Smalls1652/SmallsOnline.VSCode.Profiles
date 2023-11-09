@@ -39,12 +39,25 @@ $userDataProfiles = $settingsStorageJson.userDataProfiles
 foreach ($profileItem in $userDataProfiles) {
     Write-Verbose "Processing profile '$($profileItem.name)'."
     $profileExtensionsPath = Join-Path -Path $profilesDirPath -ChildPath "$($profileItem.location)/extensions.json"
-    $profileExtensionsContent = Get-Content -Path $profileExtensionsPath -Raw
+    $profileExtensionsContent = Get-Content -Path $profileExtensionsPath -Raw | ConvertFrom-Json
+
+    $profileExtensions = foreach ($extensionItem in $profileExtensionsContent) {
+        $extensionPackageJsonPath = Join-Path -Path $extensionItem.location.path -ChildPath "package.json"
+        $extensionPackageJsonContent = Get-Content -Path $extensionPackageJsonPath -Raw | ConvertFrom-Json
+
+        [pscustomobject]@{
+            "identifier" = [pscustomobject]@{
+                "id" = $extensionItem.identifier.id;
+                "uuid" = $extensionItem.identifier.uuid;
+            };
+            "displayName" = $extensionPackageJsonContent.displayName;
+        }
+    }
     
     $profileObj = [pscustomobject]@{
         "name" = $profileItem.name;
         "icon" = $profileItem.icon;
-        "extensions" = $profileExtensionsContent
+        "extensions" = ($profileExtensions | ConvertTo-Json -Compress);
     }
 
     $profileOutPath = Join-Path -Path $rootPathResolved -ChildPath "profiles/$($profileObj.name).code-profile"
