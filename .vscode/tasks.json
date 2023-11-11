@@ -2,6 +2,44 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Update profiles and commit",
+            "detail": "Update the profiles and commit the changes.",
+            "icon": {
+                "id": "git-commit",
+                "color": "terminal.ansiYellow"
+            },
+            "group": "build",
+            "type": "shell",
+            "command": "${workspaceFolder}/tools/Invoke-CommitUpdates.ps1",
+            "args": [
+                "-RootPath",
+                "\"${workspaceFolder}\"",
+                "-Verbose"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "pwsh",
+                    "args": [
+                        "-NoLogo",
+                        "-Command"
+                    ]
+                }
+            },
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "dependsOn": [
+                "Backup VSCode profiles",
+                "Update README"
+            ]
+        },
+        {
             "label": "Update README",
             "detail": "Update the README file with data from the profiles.",
             "icon": {
