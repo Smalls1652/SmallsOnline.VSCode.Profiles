@@ -1,4 +1,5 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
             "label": "Update README",
@@ -17,6 +18,40 @@
                 "\"${workspaceFolder}/.vscode/.resources/README.template.md\"",
                 "-ReadmePath",
                 "\"${workspaceFolder}/README.md\"",
+                "-Verbose"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "pwsh",
+                    "args": [
+                        "-NoLogo",
+                        "-Command"
+                    ]
+                }
+            },
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        },
+        {
+            "label": "Backup VSCode profiles",
+            "detail": "Backup all non-default VSCode profiles.",
+            "icon": {
+                "id": "file-symlink-file",
+                "color": "terminal.ansiCyan"
+            },
+            "group": "build",
+            "type": "shell",
+            "command": "${workspaceFolder}/tools/Invoke-ProfileBackup.ps1",
+            "args": [
+                "-RootPath",
+                "\"${workspaceFolder}\"",
                 "-Verbose"
             ],
             "options": {
