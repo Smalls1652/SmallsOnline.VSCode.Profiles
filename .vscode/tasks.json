@@ -37,7 +37,8 @@
             "dependsOn": [
                 "Backup VSCode profiles",
                 "Update README"
-            ]
+            ],
+            "dependsOrder": "sequence"
         },
         {
             "label": "Update README",
