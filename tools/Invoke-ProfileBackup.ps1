@@ -20,7 +20,7 @@ if ([System.IO.FileAttributes]::Directory -notin (Get-Item -Path $rootPathResolv
 Write-Verbose "Getting all extensions applied to all profiles."
 $vscodeUserExtensionsPath = Join-Path -Path ([System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::UserProfile)) -ChildPath ".vscode/extensions/extensions.json"
 $vscodeUserExtensionsContent = Get-Content -Path $vscodeUserExtensionsPath -Raw | ConvertFrom-Json
-$allProfilesExtensions = $vscodeUserExtensionsContent | Where-Object { $PSItem.metadata.isApplicationScoped -eq $true }
+$allProfilesExtensions = $vscodeUserExtensionsContent | Where-Object { $PSItem.metadata.isApplicationScoped -eq $true } | Sort-Object -Property "version" -Unique
 
 $vscodeUserPath = $null
 if ([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform([System.Runtime.InteropServices.OSPlatform]::OSX)) {
@@ -51,13 +51,38 @@ foreach ($profileItem in $userDataProfiles) {
         $extensionPackageJsonPath = Join-Path -Path $extensionItem.location.path -ChildPath "package.json"
         $extensionPackageJsonContent = Get-Content -Path $extensionPackageJsonPath -Raw | ConvertFrom-Json
 
+        $apiPostBody = @{
+            "filters" = @(
+                @{
+                    "criteria" = @(
+                        @{
+                            "filterType" = 8;
+                            "value" = "Microsoft.VisualStudio.Code";
+                        },
+                        @{
+                            "filterType" = 7;
+                            "value" = $extensionItem.identifier.id;
+                        }
+                    );
+                    "pageNumber" = 1;
+                    "pageSize" = 1;
+                    "sortBy" = 0;
+                    "sortOrder" = 0;
+                }
+            );
+            "assetTypes" = @();
+            "flags" = 0;
+        }
+
+        $apiResults = Invoke-RestMethod -Method "Post" -Uri "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery" -Body ($apiPostBody | ConvertTo-Json -Compress -Depth 10) -ContentType "application/json" -Headers @{ "accept" = "application/json;api-version=3.0-preview.1" } -Verbose:$false
+
         $profileExtensions.Add(
             [pscustomobject]@{
                 "identifier"  = [pscustomobject]@{
                     "id"   = $extensionItem.identifier.id;
                     "uuid" = $extensionItem.identifier.uuid;
                 };
-                "displayName" = $extensionPackageJsonContent.displayName;
+                "displayName" = $apiResults.results[0].extensions[0].displayName;
             }
         )
     }
@@ -66,16 +91,43 @@ foreach ($profileItem in $userDataProfiles) {
         $extensionPackageJsonPath = Join-Path -Path $extensionItem.location.path -ChildPath "package.json"
         $extensionPackageJsonContent = Get-Content -Path $extensionPackageJsonPath -Raw | ConvertFrom-Json
 
+        $apiPostBody = @{
+            "filters" = @(
+                @{
+                    "criteria" = @(
+                        @{
+                            "filterType" = 8;
+                            "value" = "Microsoft.VisualStudio.Code";
+                        },
+                        @{
+                            "filterType" = 7;
+                            "value" = $extensionItem.identifier.id;
+                        }
+                    );
+                    "pageNumber" = 1;
+                    "pageSize" = 1;
+                    "sortBy" = 0;
+                    "sortOrder" = 0;
+                }
+            );
+            "assetTypes" = @();
+            "flags" = 0;
+        }
+
+        $apiResults = Invoke-RestMethod -Method "Post" -Uri "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery" -Body ($apiPostBody | ConvertTo-Json -Compress -Depth 10) -ContentType "application/json" -Headers @{ "accept" = "application/json;api-version=3.0-preview.1" } -Verbose:$false
+
         $profileExtensions.Add(
             [pscustomobject]@{
                 "identifier"  = [pscustomobject]@{
                     "id"   = $extensionItem.identifier.id;
                     "uuid" = $extensionItem.identifier.uuid;
                 };
-                "displayName" = $extensionPackageJsonContent.displayName;
+                "displayName" = $apiResults.results[0].extensions[0].displayName;
             }
         )
     }
+
+    $profileExtensions = $profileExtensions | Sort-Object -Property @{Expression = { $PSItem.identifier.id }; Descending = $false}
     
     $profileObj = [pscustomobject]@{
         "name"       = $profileItem.name;
