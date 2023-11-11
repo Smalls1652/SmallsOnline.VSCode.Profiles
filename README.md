@@ -117,10 +117,13 @@ Profile for .NET and C# development.
 | Command Variable | `rioj7.command-variable` |
 | Dev Containers | `ms-vscode-remote.remote-containers` |
 | Docker | `ms-azuretools.vscode-docker` |
+| Docker | `ms-azuretools.vscode-docker` |
 | Fluent Icons | `miguelsolorio.fluent-icons` |
 | Git History | `donjayamanne.githistory` |
 | GitHub Codespaces | `github.codespaces` |
 | GitHub Copilot | `github.copilot` |
+| GitHub Copilot | `github.copilot` |
+| GitHub Copilot Chat | `github.copilot-chat` |
 | GitHub Copilot Chat | `github.copilot-chat` |
 | markdownlint | `davidanson.vscode-markdownlint` |
 | PowerShell | `ms-vscode.powershell` |
