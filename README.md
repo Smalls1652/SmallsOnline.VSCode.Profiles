@@ -59,6 +59,7 @@ The default VSCode profile.
 | GitHub Issue Notebooks | `ms-vscode.vscode-github-issue-notebooks` |
 | GitHub Pull Requests and Issues | `github.vscode-pull-request-github` |
 | GitHub Repositories | `github.remotehub` |
+| HashiCorp Terraform | `hashicorp.terraform` |
 | Hex Editor | `ms-vscode.hexeditor` |
 | IntelliCode | `visualstudioexptteam.vscodeintellicode` |
 | IntelliCode API Usage Examples | `visualstudioexptteam.intellicode-api-usage-examples` |
@@ -92,6 +93,7 @@ The default VSCode profile.
 | Remote Explorer | `ms-vscode.remote-explorer` |
 | Remote Repositories | `ms-vscode.remote-repositories` |
 | Sort JSON objects | `richie5um2.vscode-sort-json` |
+| SQLite | `alexcvzz.vscode-sqlite` |
 | Teams Toolkit | `teamsdevapp.ms-teams-vscode-extension` |
 | Test Adapter Converter | `ms-vscode.test-adapter-converter` |
 | UserScript | `adpyke.vscode-userscript` |
