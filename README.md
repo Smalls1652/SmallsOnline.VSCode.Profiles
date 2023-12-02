@@ -7,7 +7,7 @@ This repo contains all of the [profiles I use with VSCode](https://code.visualst
 - [Default](#default)
 - [Document Writing](#document-writing)
 - [.NET](#net)
-- [.NET (Dev Kit)](#net-(dev-kit))
+- [.NET (Dev Kit)](#net-dev-kit)
 - [Infrastructure as Code](#infrastructure-as-code)
 
 ### Default
