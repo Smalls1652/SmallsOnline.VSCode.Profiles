@@ -30,7 +30,7 @@ $profilesSectionBuilder = [System.Text.StringBuilder]::new()
 foreach ($profileItem in $profilesList) {
     $profileSectionContent = . $newProfileMdSectionScriptPath -ProfileItem $profileItem
     
-    $profileTocLink = $profileItem.DisplayName.ToLower().Replace(".", "").Replace(" ", "-")
+    $profileTocLink = $profileItem.DisplayName.ToLower().Replace(".", "").Replace(" ", "-").Replace("(", "").Replace(")", "")
 
     $null = $profilesTocBuilder.AppendLine("- [$($profileItem.DisplayName)](#$($profileTocLink))")
     $null = $profilesSectionBuilder.AppendLine($profileSectionContent)
