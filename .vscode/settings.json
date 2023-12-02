@@ -8,5 +8,6 @@
         }
     ],
     "task.autoDetect": "off",
-    "task.quickOpen.history": 0
+    "task.quickOpen.history": 0,
+    "markdown.extension.toc.updateOnSave": false
 }
