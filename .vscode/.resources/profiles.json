@@ -5,9 +5,19 @@
         "filePath": "profiles/Default.code-profile"
     },
     {
+        "displayName": "Document Writing",
+        "description": "Profile for writing documents (Markdown).",
+        "filePath": "profiles/Document Writing.code-profile"
+    },
+    {
         "displayName": ".NET",
         "description": "Profile for .NET and C# development.",
         "filePath": "profiles/dotnet.code-profile"
+    },
+    {
+        "displayName": ".NET (Dev Kit)",
+        "description": "Profile for .NET and C# development (Uses C# Dev Kit).",
+        "filePath": "profiles/dotnet (Dev Kit).code-profile"
     },
     {
         "displayName": "Infrastructure as Code",
