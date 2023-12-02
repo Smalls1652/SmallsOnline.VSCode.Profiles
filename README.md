@@ -61,6 +61,7 @@ The default VSCode profile.
 | GitHub Repositories | `github.remotehub` |
 | HashiCorp Terraform | `hashicorp.terraform` |
 | Hex Editor | `ms-vscode.hexeditor` |
+| ilspy-vscode | `icsharpcode.ilspy-vscode` |
 | IntelliCode | `visualstudioexptteam.vscodeintellicode` |
 | IntelliCode API Usage Examples | `visualstudioexptteam.intellicode-api-usage-examples` |
 | Ionide for F# | `ionide.ionide-fsharp` |
