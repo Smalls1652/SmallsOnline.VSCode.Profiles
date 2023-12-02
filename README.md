@@ -5,7 +5,9 @@ This repo contains all of the [profiles I use with VSCode](https://code.visualst
 ## Profiles
 
 - [Default](#default)
+- [Document Writing](#document-writing)
 - [.NET](#net)
+- [.NET (Dev Kit)](#net-(dev-kit))
 - [Infrastructure as Code](#infrastructure-as-code)
 
 ### Default
@@ -105,6 +107,33 @@ The default VSCode profile.
 | XML Tools | `dotjoshjohnson.xml` |
 | YAML | `redhat.vscode-yaml` |
 
+### Document Writing
+
+`./profiles/Document Writing.code-profile`
+
+Profile for writing documents (Markdown).
+
+#### Extensions
+
+| Display Name | Extension ID |
+| --- | --- |
+| Command Variable | `rioj7.command-variable` |
+| Dev Containers | `ms-vscode-remote.remote-containers` |
+| Docker | `ms-azuretools.vscode-docker` |
+| Fluent Icons | `miguelsolorio.fluent-icons` |
+| Git History | `donjayamanne.githistory` |
+| GitHub Actions | `github.vscode-github-actions` |
+| GitHub Copilot | `github.copilot` |
+| GitHub Copilot Chat | `github.copilot-chat` |
+| GitHub Pull Requests and Issues | `github.vscode-pull-request-github` |
+| Markdown All in One | `yzhang.markdown-all-in-one` |
+| Markdown Preview Github Styling | `bierner.markdown-preview-github-styles` |
+| markdownlint | `davidanson.vscode-markdownlint` |
+| Remote Development | `ms-vscode-remote.vscode-remote-extensionpack` |
+| vscode-icons | `vscode-icons-team.vscode-icons` |
+| XML | `redhat.vscode-xml` |
+| YAML | `redhat.vscode-yaml` |
+
 ### .NET
 
 `./profiles/dotnet.code-profile`
@@ -128,6 +157,35 @@ Profile for .NET and C# development.
 | GitHub Copilot | `github.copilot` |
 | GitHub Copilot Chat | `github.copilot-chat` |
 | GitHub Copilot Chat | `github.copilot-chat` |
+| markdownlint | `davidanson.vscode-markdownlint` |
+| PowerShell | `ms-vscode.powershell` |
+| Remote Development | `ms-vscode-remote.vscode-remote-extensionpack` |
+| vscode-icons | `vscode-icons-team.vscode-icons` |
+| XML | `redhat.vscode-xml` |
+| YAML | `redhat.vscode-yaml` |
+
+### .NET (Dev Kit)
+
+`./profiles/dotnet (Dev Kit).code-profile`
+
+Profile for .NET and C# development (Uses C# Dev Kit).
+
+#### Extensions
+
+| Display Name | Extension ID |
+| --- | --- |
+| .NET Install Tool | `ms-dotnettools.vscode-dotnet-runtime` |
+| C# | `ms-dotnettools.csharp` |
+| C# Dev Kit | `ms-dotnettools.csdevkit` |
+| Command Variable | `rioj7.command-variable` |
+| Dev Containers | `ms-vscode-remote.remote-containers` |
+| Docker | `ms-azuretools.vscode-docker` |
+| Fluent Icons | `miguelsolorio.fluent-icons` |
+| Git History | `donjayamanne.githistory` |
+| GitHub Codespaces | `github.codespaces` |
+| GitHub Copilot | `github.copilot` |
+| GitHub Copilot Chat | `github.copilot-chat` |
+| IntelliCode for C# Dev Kit | `ms-dotnettools.vscodeintellicode-csharp` |
 | markdownlint | `davidanson.vscode-markdownlint` |
 | PowerShell | `ms-vscode.powershell` |
 | Remote Development | `ms-vscode-remote.vscode-remote-extensionpack` |
