@@ -117,6 +117,7 @@ Profile for writing documents (Markdown).
 
 | Display Name | Extension ID |
 | --- | --- |
+| Code Spell Checker | `streetsidesoftware.code-spell-checker` |
 | Command Variable | `rioj7.command-variable` |
 | Dev Containers | `ms-vscode-remote.remote-containers` |
 | Docker | `ms-azuretools.vscode-docker` |
