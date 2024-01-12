@@ -21,6 +21,7 @@ The default VSCode profile.
 | Display Name | Extension ID |
 | --- | --- |
 | .NET Install Tool | `ms-dotnettools.vscode-dotnet-runtime` |
+| .NET Watch Attach | `trottero.dotnetwatchattach` |
 | AppleScript | `idleberg.applescript` |
 | ASP.NET Core Switcher | `adrianwilczynski.asp-net-core-switcher` |
 | AutoHotkey Plus Plus | `mark-wiemer.vscode-autohotkey-plus-plus` |
@@ -60,6 +61,7 @@ The default VSCode profile.
 | File Downloader | `mindaro-dev.file-downloader` |
 | Fluent Icons | `miguelsolorio.fluent-icons` |
 | Git History | `donjayamanne.githistory` |
+| Git Worktrees | `gitworktrees.git-worktrees` |
 | GitHub Actions | `github.vscode-github-actions` |
 | GitHub Codespaces | `github.codespaces` |
 | GitHub Copilot | `github.copilot` |
@@ -112,6 +114,7 @@ The default VSCode profile.
 | Version Lens | `pflannery.vscode-versionlens` |
 | vscode-icons | `vscode-icons-team.vscode-icons` |
 | vscode-pdf | `tomoki1207.pdf` |
+| vscode-solution-explorer | `fernandoescolar.vscode-solution-explorer` |
 | WSL | `ms-vscode-remote.remote-wsl` |
 | XML | `redhat.vscode-xml` |
 | XML Tools | `dotjoshjohnson.xml` |
@@ -156,6 +159,11 @@ Profile for .NET and C# development.
 | Display Name | Extension ID |
 | --- | --- |
 | .NET Install Tool | `ms-dotnettools.vscode-dotnet-runtime` |
+| .NET Watch Attach | `trottero.dotnetwatchattach` |
+| Azure Account | `ms-vscode.azure-account` |
+| Azure Functions | `ms-azuretools.vscode-azurefunctions` |
+| Azure Resources | `ms-azuretools.vscode-azureresourcegroups` |
+| Azurite | `azurite.azurite` |
 | C# | `ms-dotnettools.csharp` |
 | Command Variable | `rioj7.command-variable` |
 | Dev Containers | `ms-vscode-remote.remote-containers` |
@@ -169,9 +177,11 @@ Profile for .NET and C# development.
 | GitHub Copilot Chat | `github.copilot-chat` |
 | GitHub Copilot Chat | `github.copilot-chat` |
 | markdownlint | `davidanson.vscode-markdownlint` |
+| MSBuild project tools | `tintoy.msbuild-project-tools` |
 | PowerShell | `ms-vscode.powershell` |
 | Remote Development | `ms-vscode-remote.vscode-remote-extensionpack` |
 | vscode-icons | `vscode-icons-team.vscode-icons` |
+| vscode-solution-explorer | `fernandoescolar.vscode-solution-explorer` |
 | XML | `redhat.vscode-xml` |
 | YAML | `redhat.vscode-yaml` |
 
