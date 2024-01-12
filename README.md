@@ -176,6 +176,7 @@ Profile for .NET and C# development.
 | GitHub Copilot | `github.copilot` |
 | GitHub Copilot Chat | `github.copilot-chat` |
 | GitHub Copilot Chat | `github.copilot-chat` |
+| GitHub Pull Requests and Issues | `github.vscode-pull-request-github` |
 | markdownlint | `davidanson.vscode-markdownlint` |
 | MSBuild project tools | `tintoy.msbuild-project-tools` |
 | PowerShell | `ms-vscode.powershell` |
