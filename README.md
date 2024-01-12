@@ -171,6 +171,7 @@ Profile for .NET and C# development.
 | Docker | `ms-azuretools.vscode-docker` |
 | Fluent Icons | `miguelsolorio.fluent-icons` |
 | Git History | `donjayamanne.githistory` |
+| GitHub Actions | `github.vscode-github-actions` |
 | GitHub Codespaces | `github.codespaces` |
 | GitHub Copilot | `github.copilot` |
 | GitHub Copilot | `github.copilot` |
